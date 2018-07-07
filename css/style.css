@@ -213,14 +213,14 @@ h1 {
 
 #play-again {
 	background-color: #8c43ff;
-	padding: 0.7rem 1rem;
-	font-size: 1.1rem;
+	padding: 0.8rem 1.3rem;
+	font-size: 1.3rem;
 	display: block;
 	margin: 0 auto;
-	width: 50%;
+	width: 35%;
 	font-family: 'Orbitron', sans-serif;
 	color: #ffffff;
-	border-radius: 5px;
+	border-radius: 2px;
 }
 
 
