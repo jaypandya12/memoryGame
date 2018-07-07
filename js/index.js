@@ -45,11 +45,11 @@ function shuffle(array) {
 
 
 // shuffles cards when page is refreshed / loads
-document.body.onload = startGame();
+document.body.onload = begin();
 
 
 // function to start a new play 
-function startGame(){
+function begin(){
     // shuffle deck
     cards = shuffle(cards);
     // remove all exisiting classes from each card
@@ -220,7 +220,7 @@ function congratulations(){
 function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
-        startGame();
+        begin();
     });
 }
 
@@ -228,7 +228,7 @@ function closeModal(){
 // for user to play Again 
 function playAgain(){
     modal.classList.remove("show");
-    startGame();
+    begin();
 }
 
 
