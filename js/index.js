@@ -1,38 +1,36 @@
-// cards array holds all cards
+// cards array holds cards
 let card = document.getElementsByClassName("card");
 let cards = [...card]
 console.log(cards);
 
-// deck of all cards in game
+// deck of cards
 const deck = document.getElementById("card-deck");
+console.log("All Cards " + cards);
 
-// declaring move variable
+// move variable
 let moves = 0;
 let count = document.querySelector(".moves");
 
 // declare variables for star icons
 const stars = document.querySelectorAll(".fa-star");
 
-// declaring variable of matchedCards
+// variable of matchedCards
 let matchedCard = document.getElementsByClassName("match");
 
  // stars list
  let starsList = document.querySelectorAll(".stars li");
-
- // close icon in modal
+ // cross in modal
  let closeicon = document.querySelector(".close");
-
  // declare modal
  let modal = document.getElementById("popup1")
-
  // array for opened cards
-var openedCards = [];
-
+ var openedCards = [];
 
 //shuffles cards
+// For this algorithm I have taken help from an online tutorial that demonstarted how to shuffle an array randomly.
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
-
+    console.log('Unshuffled Array ' + array)
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -40,17 +38,18 @@ function shuffle(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-
+    
+    console.log('Shuffled Array ' + array)
     return array;
 };
 
 
 // shuffles cards when page is refreshed / loads
-document.body.onload = startGame();
+document.body.onload = start();
 
 
 // function to start a new play 
-function startGame(){
+function start(){
     // shuffle deck
     cards = shuffle(cards);
     // remove all exisiting classes from each card
@@ -221,7 +220,7 @@ function congratulations(){
 function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
-        startGame();
+        start();
     });
 }
 
@@ -229,7 +228,7 @@ function closeModal(){
 // for user to play Again 
 function playAgain(){
     modal.classList.remove("show");
-    startGame();
+    start();
 }
 
 
