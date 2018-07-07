@@ -28,6 +28,7 @@ let matchedCard = document.getElementsByClassName("match");
 
 //shuffles cards
 // For this algorithm I have taken help from an online tutorial that demonstarted how to shuffle an array randomly.
+//  https://www.kirupa.com/html5/shuffling_array_js.htm
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     console.log('Unshuffled Array ' + array)
@@ -197,6 +198,7 @@ function startTimer(){
 function congratulations(){
     if (matchedCard.length == 16){
         clearInterval(interval);
+        console.log(finalTime);
         finalTime = timer.innerHTML;
 
         // show congratulations modal
