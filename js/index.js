@@ -109,6 +109,10 @@ function matched(){
     openedCards[0].classList.remove("show", "open", "no-event");
     openedCards[1].classList.remove("show", "open", "no-event");
     openedCards = [];
+    console.log('matched cards length ' + matchedCard.length);
+    if (matchedCard.length == 16){ 
+        congratulations();
+    }
 }
 
 
@@ -196,11 +200,11 @@ function startTimer(){
 
 // congratulations when all cards match, show modal and moves, time and rating
 function congratulations(){
-    if (matchedCard.length == 16){
-        clearInterval(interval);
-        console.log(finalTime);
-        finalTime = timer.innerHTML;
 
+        clearInterval(interval);
+        
+        finalTime = timer.innerHTML;
+        console.log(finalTime);
         // show congratulations modal
         modal.classList.add("show");
 
@@ -215,7 +219,6 @@ function congratulations(){
         //closeicon on modal
         closeModal();
     };
-}
 
 
 // close icon on modal
@@ -239,5 +242,4 @@ for (var i = 0; i < cards.length; i++){
     card = cards[i];
     card.addEventListener("click", displayCard);
     card.addEventListener("click", cardOpen);
-    card.addEventListener("click",congratulations);
 };
